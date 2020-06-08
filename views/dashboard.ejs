@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+			crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/dashboardstyle.css">
+
+		<title>Hello, world!</title>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Good Health Consult</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link active" href="/"
+						>Home <span class="sr-only">(current)</span></a
+					>
+					<a class="nav-item nav-link" href="#">Features</a>
+					<a class="nav-item nav-link" href="#">Pricing</a>
+					<a
+						class="nav-item nav-link disabled"
+						href="#"
+						tabindex="-1"
+						aria-disabled="true"
+						>Disabled</a
+					>
+				</div>
+			</div>
+		</nav>
+        <div class="sidebar navbar-dark bg-dark">
+            <center>
+                <img src="1.png" class="profile_image" alt="" />
+                <h4><%= UserName %></h4>
+            </center>
+            <a href="/dashboard"><span>Dashboard</span></a>
+            <a href="/patients/addPatient"><span>Patient Form</span></a>
+            <a href="/patients/payment"><span>Payment Form</span></a>
+            <a href="/patients"><span>Patients</span></a>
+            <!-- <a href="#"><span>About</span></a> -->
+            <!-- <a href="#"><span>Settings</span></a> -->
+            <a href="/users/logout"><span>Logout</span></a>
+        </div>
+        <!--sidebar end-->
+        
+        <div class="container content">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">PatientID</th>
+					<th scope="col">First Name</th>
+					<th scope="col">Last Name</th>
+					<th scope="col">Phone Number</th>
+					<th scope="col">Emergency Contact</th>
+					<th scope="col">Residential Address</th>
+					<th scope="col">Date Of Birth</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% patients.forEach(patient =>{ %> 
+				<tr>
+					<td><%= patient.patientID %> </td>
+					<td><%= patient.FName %> </td>
+					<td><%= patient.LName %></td>
+					<td><%= patient.phoneNumber %></td>
+					<td><%= patient.emergencyContact %></td>
+					<td><%= patient.residentialAddress %></td>
+					<td><%= patient.dob.toLocaleDateString() %></td>
+				</tr>
+				<% }) %> 
+			</tbody>
+		</table>
+        </div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+			integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

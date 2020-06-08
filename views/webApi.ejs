@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/webapistyle.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <style>
+        body {
+            padding: 50px;
+            font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+        }
+    
+        a {
+            color: #00b7ff;
+        }
+    
+        section {
+            float: left;
+            background: #bdc3c7;
+            padding: 10px;
+            margin: 30px;
+            width: 300px;
+            box-shadow: 3px 3px 1px #34495e;
+            min-height: 400px;
+        }
+    
+        section:first-of-type {
+            margin-left: 0;
+        }
+    
+        section:last-of-type {
+            margin-right: 0;
+        }
+    
+        section h3 {
+            border-bottom: 1px solid black;
+            padding-bottom: 5px;
+        }
+    
+        .insert {
+            background: #2ecc71;
+        }
+    
+        .get {
+            background: #ecf0f1;
+        }
+    
+        .update {
+            background: #3498db;
+        }
+    
+        .delete {
+            background: #e74c3c;
+        }
+    
+        .input label {
+            display: block;
+            font-weight: bold;
+            padding: 2px 0;
+        }
+    
+        input,
+        button {
+            font: inherit;
+        }
+    
+        button {
+            margin-top: 10px;
+            border: none;
+            box-shadow: 1px 1px 1px #34495e;
+            border-radius: 0;
+            background: #ecf0f1;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background: #bdc3c7;
+        }
+    
+        .item {
+            margin: 10px 0;
+            padding: 5px;
+            background: #95a5a6;
+            border: 1px solid black;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Good Health Consult</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Features</a>
+                <a class="nav-item nav-link" href="#">Pricing</a>
+                <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </div>
+        </div>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" href="/users/login">Sign-in</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/register">Sign-up</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="insert">
+        <h3>Insert Data</h3>
+        <form action="/material/add" method="post">
+            <div class="input">
+                <label for="code"> Material Code</label>
+                <input type="text" id="code" name="code">
+            </div>
+            <div class="input">
+                <label for="name">Material Name</label>
+                <input type="name" id="name" name="name">
+            </div>
+            <div class="input">
+                <label for="unitPrice">Unit Price</label>
+                <input type="text" id="unitPrice" name="unitPrice">
+            </div>
+            <div class="input">
+                <label for="stockLevel">Stock Level</label>
+                <input type="text" id="stockLevel" name="stockLevel">
+            </div>
+            <button type="submit">INSERT</button>
+        </form>
+    </section>
+
+    
+    <section class="update">
+        <h3>Update Data</h3>
+        <form action="/material/update" method="post">
+            <div class="input">
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id">
+            </div>
+            <div class="input">
+                <label for="code"> Material Code</label>
+                <input type="text" id="code" name="code">
+            </div>
+            <div class="input">
+                <label for="name">Material Name</label>
+                <input type="name" id="name" name="name">
+            </div>
+            <div class="input">
+                <label for="unitPrice">Unit Price</label>
+                <input type="text" id="unitPrice" name="unitPrice">
+            </div>
+            <div class="input">
+                <label for="stockLevel">Stock Level</label>
+                <input type="text" id="stockLevel" name="stockLevel">
+            </div>
+            <button type="submit">UPDATE</button>
+        </form>
+    </section>
+    </section>
+    <section class="delete">
+        <h3>Delete Data</h3>
+        <form action="/material/delete" method="post">
+            <div class="input">
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id">
+            </div>
+            <button type="submit">DELETE</button>
+        </form>
+    </section>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
