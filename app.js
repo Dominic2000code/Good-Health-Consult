@@ -49,7 +49,11 @@ app.use((req, res, next) => {
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
 app.use("/patients", require("./routes/patient"));
+//this api has interface
 app.use("/material", require("./routes/api"));
+
+//this api requires postman to work
+app.use("/material", require("./routes/material"));
 
 
 
